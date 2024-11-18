@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screencolor">
+
+    <!-- RecyclerView to show notes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_above="@id/fab"/>
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        android:contentDescription="@string/add_note"
+        android:tint="@color/white"
+        android:backgroundTint="@color/buttoncolor"/>
+
+    <!-- Message to display when there are no notes -->
+    <LinearLayout
+        android:id="@+id/emptyMessageLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/emptyIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_add_box_24"
+            android:backgroundTint="@color/white"
+        android:contentDescription="@string/add_note"/>
+
+        <TextView
+            android:id="@+id/emptyTextMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No notes available. Add a new note!"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+</RelativeLayout>
